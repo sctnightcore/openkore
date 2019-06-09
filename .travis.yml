@@ -16,4 +16,4 @@ install:
    - cpanm --quiet --notest Compress::Zlib
 
 script:
-   - perl openkore.pl --control=travis-ci\control --logs=travis-ci\logs
+   - perl openkore.pl --control="travis-ci/control" --logs="travis-ci/logs"
