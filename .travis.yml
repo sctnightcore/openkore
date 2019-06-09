@@ -10,11 +10,8 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-8
-            - libboost1.67
-            - libboost1.67-dev
             - libgmp-dev
-            - build-essential
+            - build-essential g++
             - libreadline6-dev
             - libcurlx-dev
             - python
