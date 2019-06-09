@@ -6,18 +6,31 @@ perl:
   - "5.16"
   - "5.14"
   - "5.12"
+  
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-8
+            - libboost1.67
+            - libboost1.67-dev
+            - libgmp-dev
+            - build-essential
+            - libreadline6-dev
+            - libcurlx-dev
+            - python
 
 before_install:
-    - sudo apt-get update -q
-    - sudo apt-get install -y libgmp-dev
-    - sudo apt-get install -y build-essential g++
-    - sudo apt-get install -y libreadline6-dev
-    - sudo apt-get install -y python
-    - sudo apt-get install -y libcurlx-dev
     - cpanm Compress::Zlib
     - cpanm Time::HiRes
-
+    
 install:
     - cpanm -v --installdeps --notest .
 
-script: "perl openkore.pl"
+script:
+  - perl ./openkore.pl
