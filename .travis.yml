@@ -26,7 +26,6 @@ matrix:
             - python
 
 before_install:
-    - cpanm -v --installdeps --notest
     - cpanm Compress::Zlib
     - cpanm Time::HiRes
     
