@@ -12,9 +12,8 @@ before_install:
    - sudo apt-get install -y libreadline6-dev
 
 install:
-   - export RELEASE_TESTING=1 AUTOMATED_TESTING=1 AUTHOR_TESTING=1 HARNESS_OPTIONS=j10:c HARNESS_TIMER=1
    - cpanm --quiet --notest Time::HiRes
    - cpanm --quiet --notest Compress::Zlib
 
 script:
-   - PERL5OPT=-MDevel::Cover=-coverage,statement,branch,condition,path,subroutine prove -lrsv t
+   - perl openkore.pl
