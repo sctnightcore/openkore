@@ -26,11 +26,9 @@ matrix:
             - python
 
 before_install:
+    - cpanm -v --installdeps --notest
     - cpanm Compress::Zlib
     - cpanm Time::HiRes
     
-install:
-    - cpanm -v --installdeps --notest .
-
 script:
-  - perl ./openkore.pl
+  - perl openkore.pl
