@@ -21,6 +21,7 @@ use Carp::Assert;
 
 
 sub __start {
+	my ( %args ) = @_;
 	use ErrorHandler;
 	use XSTools;
 	use Utils::Rijndael;
@@ -96,7 +97,9 @@ sub __start {
 	Benchmark::begin("Real time") if DEBUG;
 	$interface->mainLoop();
 	Benchmark::end("Real time") if DEBUG;
-
+	if ($ARGV[0] == 1) {
+		exit;
+	}
 	main::shutdown();
 }
 

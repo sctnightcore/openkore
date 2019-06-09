@@ -16,4 +16,4 @@ install:
    - cpanm --quiet --notest Compress::Zlib
 
 script:
-   - perl openkore.pl
+   - perl openkore.pl 1
