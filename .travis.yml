@@ -1,10 +1,8 @@
+sudo: false
 language: "perl"
 perl:
   - "5.12"
-matrix:
-  include:
-    - os: linux
-      dist: xenial
+dist: xenial
 
 before_install:
     - sudo apt-get update -y
@@ -13,6 +11,5 @@ before_install:
     - sudo apt-get install -y libreadline6-dev
     - cpanm Compress::Zlib
     - cpanm Time::HiRes
-    
 script:
   - perl openkore.pl
