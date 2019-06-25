@@ -27,3 +27,8 @@ test:
 
 doc:
 	cd src/doc && ./createdoc.pl
+#termux app
+termux-all:
+	@python2 src/scons-local-3.0.1/scons.py
+termux-clean:
+	python2 src/scons-local-3.0.1/scons.py -c
