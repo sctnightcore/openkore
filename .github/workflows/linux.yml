@@ -1,0 +1,25 @@
+name: Perl application
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup Perl environment
+      uses: shogo82148/actions-setup-perl@v1.2.0
+      with:
+
+        perl-version: 5.12
+    - name: Install Deps!
+      run: |
+        cpanm --installdeps
+    - name: Install Perl Critic
+      run: |
+        cpanm Perl::Critic 
+    - name: Test with Perlcritic
+      run: |
+        perlcritic src/
